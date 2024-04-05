@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Estedad-FD-Regular";
+  src: url("../../public/fonts/Estedad-FD-Regular.woff2") format("woff2");
+}
+
+
+
+@font-face {
+  font-family: "Estedad-FD-Bold";
+  src: url("../../public/fonts/Estedad-FD-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-ExtraBold";
+  src: url("../../public/fonts/Estedad-FD-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-ExtraLight";
+  src: url("../../public/fonts/Estedad-FD-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-Light";
+  src: url("../../public/fonts/Estedad-FD-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-Medium";
+  src: url("../../public/fonts/Estedad-FD-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-SemiBold";
+  src: url("../../public/fonts/Estedad-FD-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad-FD-Thin";
+  src: url("../../public/fonts/Estedad-FD-Thin.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+body {
+  font-family: "Estedad-FD-Regular";
+}
+
+.btnGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out !important;
+  -webkit-transition: all 0.5s ease-in-out !important;
+  -moz-transition: all 0.5s ease-in-out !important;
+  -ms-transition: all 0.5s ease-in-out !important;
+  -o-transition: all 0.5s ease-in-out !important;
+  padding: 5px;
+  height: 45px;
+}
+
+.btnGoogle svg {
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+}

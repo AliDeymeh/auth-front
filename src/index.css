@@ -88,3 +88,12 @@ body {
   padding: 0;
   margin-left: 15px;
 }
+
+.divLink {
+  width: 100%;
+  display: flex;
+}
+
+.divLink .link {
+  width: 100%;
+}

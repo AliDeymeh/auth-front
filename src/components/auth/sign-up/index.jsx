@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-const SignIn = () => {
+const SignUp = () => {
   // const [agreed, setAgreed] = useState(false);
   return (
     <>
-      <div className="isolate bg-white px-2 sm:py-56 lg:px-8">
+      <div className="isolate bg-white px-2 sm:py-32 lg:px-8">
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
@@ -19,6 +19,57 @@ const SignIn = () => {
 
         <form action="#" method="POST" className="mx-auto  max-w-xl sm:mt-0">
           <div className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+            <div>
+              <label
+                htmlFor="first-name"
+                className="block font-serif text-sm font-semibold leading-6 text-gray-900"
+              >
+                نام
+              </label>
+              <div className="mt-1.5">
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  className="block w-full font-sans bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="last-name"
+                className="block text-sm font-serif leading-6 text-gray-900 font-sans"
+              >
+                نام خانوادگی
+              </label>
+              <div className="mt-1.5">
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  autoComplete="given-name"
+                  className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="displayName"
+                className="block text-sm font-serif leading-6 text-gray-900"
+              >
+                نام کاربری
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="text"
+                  name="displayName"
+                  id="displayName"
+                  autoComplete="organization"
+                  className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
@@ -37,7 +88,24 @@ const SignIn = () => {
               </div>
             </div>
 
-            <div className="sm:col-span-2">
+            <div>
+              <label
+                htmlFor="password"
+                className="block font-serif text-sm font-semibold leading-6 text-gray-900"
+              >
+                رمز عبور
+              </label>
+              <div className="mt-1.5">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  autoComplete="given-name"
+                  className="block w-full font-sans bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div>
               <label
                 htmlFor="passwordConfirm"
                 className="block text-sm font-serif leading-6 text-gray-900 font-sans"
@@ -134,13 +202,13 @@ const SignIn = () => {
               </button>
             </div>
           </div>
-          <div className="mx-auto px-0  my-0 text-center mt-3 w-full divLink">
+          <div className="mx-auto px-0 max-w-2xl my-0 text-center mt-3 divLink">
             <Link
-              to="/sign-up"
-              className="my-2 w-full link font-display rounded-md bg-indigo-200 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              to="/sign-in"
+              className="my-2 link  font-display rounded-md bg-indigo-200 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              {/* <Link to="/sign-up">ثبت نام </Link> */}
-              ثبت نام
+              {/* <Link to="/sign-in">ورود</Link> */}
+              ورود
             </Link>
           </div>
           <div className="mt-10">
@@ -157,4 +225,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

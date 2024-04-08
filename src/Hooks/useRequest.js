@@ -2,8 +2,8 @@ import axios from "axios";
 import { getCookie } from "./useCookie";
 import { toast } from "react-toastify";
 
-import { Error } from "Hooks/Toast";
-import { baseApi } from "Services/config";
+import { Error } from "./Toast";
+import { baseApi } from "../Services/config";
 
 export const handelTextError = (errors) => {
   let textArray = [];

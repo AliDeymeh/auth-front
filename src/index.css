@@ -59,6 +59,8 @@
   src: url("../../public/fonts/Estedad-FD-Thin.woff2") format("woff2");
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +70,21 @@
 
 body {
   font-family: "Estedad-FD-Regular";
+}
+
+.Toastify__toast-container--top-right {
+  top: 8px !important;
+  right: 0 !important;
+
+  font-family: "Estedad-FD-Regular" !important;
+}
+
+.Toastify__toast-container {
+  width: 300px !important;
+
+  z-index: 185000;
+  color: #242424;
+  font-family: "Estedad-FD-Regular" !important;
 }
 
 .btnGoogle {

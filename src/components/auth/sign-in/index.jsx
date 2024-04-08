@@ -1,6 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useRequest from "../../../Hooks/useRequest";
+import { notifyAlert } from "../../../Hooks/notifAlert";
 const SignIn = () => {
-  // const [agreed, setAgreed] = useState(false);
+  const [form, setForm] = useState(false);
+
+  const handlerChangeData = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+  const { Post } = useRequest();
+
+  const submitData = (e) => {
+    e.preventDefault();
+    console.log(form);
+    Post("/auth/login", form, (res) => {
+      console.log(res);
+    });
+  };
+  const submitDataGoogle = async () => {
+    window.open(`http://localhost:3000/auth/google/`, "_self");
+  };
+  const submitDataGit = async () => {
+    window.open(`http://localhost:3000/auth/github/callback`, "_self");
+  };
   return (
     <>
       <div className="isolate bg-white px-2 sm:py-56 lg:px-8">
@@ -30,6 +54,7 @@ const SignIn = () => {
                 <input
                   type="email"
                   name="email"
+                  onChange={(e) => handlerChangeData(e)}
                   id="email"
                   autoComplete="email"
                   className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -42,12 +67,13 @@ const SignIn = () => {
                 htmlFor="passwordConfirm"
                 className="block text-sm font-serif leading-6 text-gray-900 font-sans"
               >
-                تایید رمز عبور
+                رمز عبور
               </label>
               <div className="mt-1.5">
                 <input
-                  type="text"
-                  name="passwordConfirm"
+                  type="password"
+                  name="password"
+                  onChange={(e) => handlerChangeData(e)}
                   id="passwordConfirm"
                   autoComplete="given-name"
                   className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -57,6 +83,7 @@ const SignIn = () => {
             <div className="mt-5">
               <button
                 type="button"
+                onClick={submitDataGit}
                 className="btnGoogle w-full font-display rounded-md hover:bg-gradient-to-l  bg-gradient-to-r from-slate-50 to-slate-100 px-3.5 py-2.5 text-center text-sm font-semibold text-cyan-950 border  shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 <svg
@@ -73,6 +100,7 @@ const SignIn = () => {
             <div className="mt-5">
               <button
                 type="button"
+                onClick={submitDataGoogle}
                 className="btnGoogle w-full    font-display rounded-md hover:bg-gradient-to-l   bg-gradient-to-r from-purple-500 to-pink-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 <svg
@@ -145,7 +173,8 @@ const SignIn = () => {
           </div>
           <div className="mt-10">
             <button
-              type="submit"
+              type="button"
+              onClick={submitData}
               className="block w-full font-display rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               ثبت اطلاعات

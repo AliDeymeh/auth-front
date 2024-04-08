@@ -1,4 +1,5 @@
-const Home = ({ user }) => {
+const Home = ({ data }) => {
+  const user = data;
   return (
     <>
       <div className="isolate h-100vh bg-white px-2 sm:py-32 lg:px-8">
@@ -30,7 +31,7 @@ const Home = ({ user }) => {
                   name="givenName"
                   id="first-name"
                   readOnly={true}
-                  value={user?.givenName}
+                  value={user ? user?.givenName : null}
                   autoComplete="given-name"
                   className="block w-full font-sans bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -49,7 +50,7 @@ const Home = ({ user }) => {
                   name="familyName"
                   id="last-name"
                   readOnly={true}
-                  value={user.familyName}
+                  placeholder={user ? user.familyName : ""}
                   autoComplete="given-name"
                   className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -68,7 +69,7 @@ const Home = ({ user }) => {
                   name="displayName"
                   id="displayName"
                   readOnly={true}
-                  value={user.displayName}
+                  value={user ? user.displayName : null}
                   autoComplete="organization"
                   className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -86,7 +87,7 @@ const Home = ({ user }) => {
                   type="email"
                   name="email"
                   readOnly={true}
-                  value={user.email}
+                  value={user ? user.email : null}
                   id="email"
                   autoComplete="email"
                   className="block w-full bg-white rounded-md border-0 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500  focus:ring-0 focus:ring-indigo-600 sm:text-sm sm:leading-6"

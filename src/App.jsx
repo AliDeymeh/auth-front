@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import SignIn from "./components/auth/sign-in";
 import SignUp from "./components/auth/sign-up";
 import Home from "./components/home";
+// import { useLocation } from "react-router-dom";
 //fix data
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -36,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/" element={<Home user={user} />} />
+          <Route path="/" element={<Home data={user} />} />
         </Routes>
         <ToastContainer
           rtl={true}

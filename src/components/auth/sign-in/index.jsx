@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useRequest from "../../../Hooks/useRequest";
-import { notifyAlert } from "../../../Hooks/notifAlert";
+
 const SignIn = () => {
   const [form, setForm] = useState(false);
 
